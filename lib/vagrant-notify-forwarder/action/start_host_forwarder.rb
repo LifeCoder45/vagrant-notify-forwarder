@@ -43,7 +43,9 @@ module VagrantPlugins
             return unless path
 
             env[:machine].config.vm.synced_folders.each do |id, options|
-              unless options[:disabled]
+              # check to see if this plugin is globally disabled, 
+              # or disabled for this specific directory
+              unless options[:disabled] || options[:disable_notify_forwarder]
                 hostpath = File.expand_path(options[:hostpath], env[:root_path])
                 guestpath = options[:guestpath]
 

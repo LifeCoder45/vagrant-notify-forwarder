@@ -49,8 +49,15 @@ machine, add the following line to your `Vagrantfile`:
 config.notify_forwarder.enable = false
 ```
 
+To disable this plugin on a per synced folder basis, you can use the option `disable_notify_forwarder`:
+
+```ruby
+config.vm.synced_folder "~/Projects", "/home/vagrant/Projects", disable_notify_forwarder: true
+```
+
 ## Contributors
 
 * [CharlieC3](https://github.com/CharlieC3)
 * [hedinfaok](https://github.com/hedinfaok)
 * [seff](https://github.com/seff)
+* [Josh O'Neal](https://github.com/LifeCoder45)
